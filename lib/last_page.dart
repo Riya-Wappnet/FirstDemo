@@ -245,11 +245,20 @@ class _LastPageState extends State<LastPage> {
                                     color: Colors.black54,
                                     size: 20,
                                   ),
-                                  header: const Text("Our Newsletter"),
+                                  header: const Text(
+                                    "Our Newsletter",
+                                    style: TextStyle(
+                                      fontFamily: 'Nato',
+                                    ),
+                                  ),
                                   content: const Column(
                                     children: [
                                       Text(
-                                          "Get subscribe our newsletter for updates"),
+                                        "Get subscribe our newsletter for updates",
+                                        style: TextStyle(
+                                          fontFamily: 'Nato',
+                                        ),
+                                      ),
                                     ],
                                   ),
                                 ),
@@ -264,6 +273,7 @@ class _LastPageState extends State<LastPage> {
                   "© NotePal  |  All Rights Reserved 2023",
                   style: TextStyle(
                     color: Color.fromRGBO(30, 41, 59, 1),
+                    fontFamily: 'Nato',
                   ),
                 ),
               ],

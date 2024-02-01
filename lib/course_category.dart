@@ -170,6 +170,148 @@ class _SliderCategoryState extends State<SliderCategory> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: indicators(images.length, activePage),
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            Container(
+              margin: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Color.fromRGBO(148, 111, 198, 1),
+              ),
+              padding: const EdgeInsets.all(20),
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height * 0.35,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        height: 80,
+                        width: 80,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.white,
+                        ),
+                        child: Align(
+                            alignment: Alignment.center,
+                            child: Image.asset(
+                              "assets/images/courses-icon.png",
+                              height: 60,
+                              width: 60,
+                            )),
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      const Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "500+",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 25,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                          Text(
+                            "Total Courses",
+                            style: TextStyle(color: Colors.white),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Container(
+                        height: 80,
+                        width: 80,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.white,
+                        ),
+                        child: Align(
+                            alignment: Alignment.center,
+                            child: Image.asset(
+                              "assets/images/teacher-icon.png",
+                              height: 60,
+                              width: 60,
+                            )),
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      const Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "250+",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 25,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                          Text(
+                            "Total Techers",
+                            style: TextStyle(color: Colors.white),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        height: 80,
+                        width: 80,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.white,
+                        ),
+                        child: Align(
+                            alignment: Alignment.center,
+                            child: Image.asset(
+                              "assets/images/parents-icon.png",
+                              height: 60,
+                              width: 60,
+                            )),
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      const Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "10K+",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 25,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                          Text(
+                            "Total Parents",
+                            style: TextStyle(color: Colors.white),
+                          )
+                        ],
+                      )
+                    ],
+                  )
+                ],
+              ),
             )
           ],
         ),

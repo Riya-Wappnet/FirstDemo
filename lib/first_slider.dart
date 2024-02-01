@@ -8,83 +8,71 @@ class SliderFirst extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Courses")),
-      body: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        // height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
-        color: const Color.fromRGBO(63, 196, 255, 0.05),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            RichText(
-              softWrap: true,
-              text: const TextSpan(
-                  text: 'Our top ',
-                  style: TextStyle(
-                      fontFamily: "Nato",
-                      color: Color.fromRGBO(30, 41, 59, 1),
-                      fontWeight: FontWeight.w700,
-                      fontSize: 35),
-                  children: [
-                    TextSpan(
-                      text: 'courses',
-                      style: TextStyle(
-                          fontFamily: "Nato",
-                          color: Color.fromRGBO(148, 111, 198, 1),
-                          fontWeight: FontWeight.w700,
-                          fontSize: 35),
-                    ),
-                    TextSpan(
-                      text: ' for you',
-                      style: TextStyle(
-                          color: Color.fromRGBO(30, 41, 59, 1),
-                          fontFamily: "Nato",
-                          fontWeight: FontWeight.w700,
-                          fontSize: 35),
-                    )
-                  ]),
-            ),
-            const SizedBox(
-              height: 5,
-            ),
-            Texties().smallText(
-                "We have best quality education courses and we provide education courses for students parents."),
-            const SizedBox(
-              height: 10,
-            ),
-            Expanded(
-              child: GridView(
-                padding: const EdgeInsets.only(top: 10),
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 10,
-                    crossAxisCount: 2,
-                    childAspectRatio: (1.96 / 3)),
-                shrinkWrap: false,
-                children: [
-                  courseGrid(
-                    "assets/images/Group 3.png",
-                  ),
-                  courseGrid(
-                    "assets/images/Group 2.png",
-                  ),
-                  courseGrid(
-                    "assets/images/Group 1.png",
-                  ),
-                  courseGrid(
-                    "assets/images/Group 3.png",
-                  ),
-                  courseGrid(
-                    "assets/images/Group 1.png",
-                  ),
-                  courseGrid(
-                    "assets/images/Group 2.png",
-                  ),
-                ],
+      body: SingleChildScrollView(
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          // height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          color: const Color.fromRGBO(63, 196, 255, 0.05),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              RichText(
+                softWrap: true,
+                text: const TextSpan(
+                    text: 'Our top ',
+                    style: TextStyle(
+                        fontFamily: "Nato",
+                        color: Color.fromRGBO(30, 41, 59, 1),
+                        fontWeight: FontWeight.w700,
+                        fontSize: 35),
+                    children: [
+                      TextSpan(
+                        text: 'courses',
+                        style: TextStyle(
+                            fontFamily: "Nato",
+                            color: Color.fromRGBO(148, 111, 198, 1),
+                            fontWeight: FontWeight.w700,
+                            fontSize: 35),
+                      ),
+                      TextSpan(
+                        text: ' for you',
+                        style: TextStyle(
+                            color: Color.fromRGBO(30, 41, 59, 1),
+                            fontFamily: "Nato",
+                            fontWeight: FontWeight.w700,
+                            fontSize: 35),
+                      )
+                    ]),
               ),
-            ),
-          ],
+              const SizedBox(
+                height: 5,
+              ),
+              Texties().smallText(
+                  "We have best quality education courses and we provide education courses for students parents."),
+              const SizedBox(
+                height: 10,
+              ),
+              GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 10,
+                  crossAxisCount: 2,
+                  childAspectRatio: (1.96 / 3),
+                ),
+                shrinkWrap: true,
+                physics:
+                    const NeverScrollableScrollPhysics(), // Prevent GridView from scrolling
+                itemCount: 6,
+                itemBuilder: (BuildContext context, int index) {
+                  final imageIndex = index % 3; // Repeats the images
+                  return courseGrid(
+                      "assets/images/Group ${imageIndex + 1}.png");
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
