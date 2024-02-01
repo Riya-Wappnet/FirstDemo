@@ -157,8 +157,8 @@ class _SliderCategoryState extends State<SliderCategory> {
                 IconButton(
                   onPressed: () {
                     _pageController.nextPage(
-                        duration: const Duration(microseconds: 500),
-                        curve: Curves.easeInOutCubic);
+                        duration: const Duration(microseconds: 700),
+                        curve: Curves.easeInOutCirc);
                   },
                   icon: const Icon(Icons.arrow_forward),
                   style: ButtonStyle(
