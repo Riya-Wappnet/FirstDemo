@@ -65,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       builder: (BuildContext context) => const SliderFirst()));
                 },
                 title: const Text("Courses"),
-                trailing: const Icon(Icons.arrow_forward),
+                trailing: const Icon(Icons.slideshow_rounded),
               ),
               ListTile(
                 onTap: () {
